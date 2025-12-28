@@ -12,22 +12,32 @@ function BottomNav() {
 
       // Update active section based on scroll position
       const sections = ['home', 'skills', 'education', 'projects', 'achievements', 'contact'];
-      const currentSection = sections.find(section => {
+      
+      // Find which section is currently in view
+      let current = 'home';
+      for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
+          // Check if section is in viewport (more lenient detection)
+          if (rect.top <= 200 && rect.bottom >= 100) {
+            current = section;
+          }
         }
-        return false;
-      });
-      if (currentSection) {
-        setActiveSection(currentSection);
       }
+      setActiveSection(current);
     };
 
+    // Initial check
+    handleScroll();
+    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleNavClick = (section) => {
+    setActiveSection(section);
+  };
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -39,12 +49,12 @@ function BottomNav() {
   return (
     <>
       <nav className="bottom-nav">
-        <a href="#home" className={activeSection === 'home' ? 'active' : ''}><i className="fas fa-home"></i> Home</a>
-        <a href="#skills" className={activeSection === 'skills' ? 'active' : ''}><i className="fas fa-code"></i> Skills</a>
-        <a href="#education" className={activeSection === 'education' ? 'active' : ''}><i className="fas fa-graduation-cap"></i> Education</a>
-        <a href="#projects" className={activeSection === 'projects' ? 'active' : ''}><i className="fas fa-rocket"></i> Projects</a>
-        <a href="#achievements" className={activeSection === 'achievements' ? 'active' : ''}><i className="fas fa-trophy"></i> Awards</a>
-        <a href="#contact" className={activeSection === 'contact' ? 'active' : ''}><i className="fas fa-envelope"></i> Contact</a>
+        <a href="#home" onClick={() => handleNavClick('home')} className={activeSection === 'home' ? 'active' : ''}><i className="fas fa-home"></i> Home</a>
+        <a href="#skills" onClick={() => handleNavClick('skills')} className={activeSection === 'skills' ? 'active' : ''}><i className="fas fa-code"></i> Skills</a>
+        <a href="#education" onClick={() => handleNavClick('education')} className={activeSection === 'education' ? 'active' : ''}><i className="fas fa-graduation-cap"></i> Education</a>
+        <a href="#projects" onClick={() => handleNavClick('projects')} className={activeSection === 'projects' ? 'active' : ''}><i className="fas fa-rocket"></i> Projects</a>
+        <a href="#achievements" onClick={() => handleNavClick('achievements')} className={activeSection === 'achievements' ? 'active' : ''}><i className="fas fa-trophy"></i> Awards</a>
+        <a href="#contact" onClick={() => handleNavClick('contact')} className={activeSection === 'contact' ? 'active' : ''}><i className="fas fa-envelope"></i> Contact</a>
       </nav>
       
       <button 
