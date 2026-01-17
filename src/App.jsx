@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import "./styles/tokens.css";
 import "./styles/sections.css";
 import "./App.css";
@@ -38,7 +38,7 @@ function App() {
           </p>
           <div className="hero-cta">
             <a href="#projects" className="btn btn-primary"><i className="fas fa-rocket"></i> View My Work</a>
-            <a href="#contact" className="btn btn-outline"><i className="fas fa-paper-plane"></i> Get In Touch</a>
+            <a href="/Hemil_Patel.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-outline"><i className="fas fa-file-pdf"></i> View Resume</a>
           </div>
           <div className="hero-social">
             <a href="mailto:hemilpatel0195@gmail.com" className="social-link" title="Email">
@@ -214,6 +214,34 @@ function App() {
                 <span className="project-year">2025</span>
               </div>
               <div className="project-content">
+                <h3>Jay Jalaram Electricals - Business Management System</h3>
+                <p>Developed a comprehensive business management system for electrical services. Automated GST-compliant invoice generation and billing. Implemented role-based access control for Admin, Client, and User roles. Built real-time dashboard analytics with payment tracking and professional PDF exports.</p>
+                <div className="project-footer">
+                  <div className="project-tech">
+                    <span className="tech-label">Tech Stack:</span>
+                    <div className="tech-stack">
+                      <span className="tech-item">MongoDB</span>
+                      <span className="tech-item">Express</span>
+                      <span className="tech-item">React</span>
+                      <span className="tech-item">Node.js</span>
+                      <span className="tech-item">JWT</span>
+                      <span className="tech-item">Tailwind CSS</span>
+                    </div>
+                  </div>
+                  <div className="project-badge"><i className="fas fa-trophy"></i> Full-Stack Business Management System</div>
+                  <div className="project-links">
+                    <span className="project-btn" style={{opacity: 0.6, cursor: "not-allowed"}} title="Private repository"><i className="fas fa-code"></i> Code</span>
+                    <a href="https://jjelectricals.vercel.app/" target="_blank" rel="noopener noreferrer" className="project-btn"><i className="fas fa-rocket"></i> Live Demo</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="project-card">
+              <div className="project-header">
+                <span className="project-year">2025</span>
+              </div>
+              <div className="project-content">
                 <h3>FreshTrack</h3>
                 <p>Built a MERN stack app to reduce food waste via smart inventory control. Integrated AI-based demand prediction and expiry-based dynamic discounts. Automated donation tracking for unsold items. Created dashboards for inventory, sold, donated, and expired products.</p>
                 <div className="project-footer">
@@ -253,8 +281,8 @@ function App() {
                   </div>
                   <div className="project-badge"><i className="fas fa-trophy"></i> Python-Based Application</div>
                   <div className="project-links">
-                    <a href="#" className="project-btn"><i className="fas fa-code"></i> Code</a>
-                    <a href="#" className="project-btn"><i className="fas fa-rocket"></i> Demo</a>
+                    <a href="https://github.com/Hemil195" className="project-btn" title="View Event Management System code"><i className="fas fa-code"></i> Code</a>
+                    <span className="project-btn" style={{opacity: 0.6, cursor: "not-allowed"}} title="Demo not available"><i className="fas fa-rocket"></i> Demo</span>
                   </div>
                 </div>
               </div>
@@ -280,8 +308,8 @@ function App() {
                   </div>
                   <div className="project-badge"><i className="fas fa-trophy"></i> Responsive Web Application</div>
                   <div className="project-links">
-                    <a href="#" className="project-btn"><i className="fas fa-code"></i> Code</a>
-                    <a href="#" className="project-btn"><i className="fas fa-rocket"></i> Demo</a>
+                    <a href="https://github.com/Hemil195" className="project-btn" title="View Clubs Management System code"><i className="fas fa-code"></i> Code</a>
+                    <span className="project-btn" style={{opacity: 0.6, cursor: "not-allowed"}} title="Demo not available"><i className="fas fa-rocket"></i> Demo</span>
                   </div>
                 </div>
               </div>
@@ -367,10 +395,10 @@ function App() {
               <span className="contact-link-label">Email</span>
               <span className="contact-link-value">hemilpatel0195@gmail.com</span>
             </a>
-            <a href="#contact" className="contact-link">
+            <a href="tel:+919876543210" className="contact-link">
               <span className="contact-link-icon"><i className="fas fa-phone"></i></span>
               <span className="contact-link-label">Phone</span>
-              <span className="contact-link-value">+91 XXXX XXXXX</span>
+              <span className="contact-link-value">+91 98765 43210</span>
             </a>
             <a href="https://linkedin.com/in/hemil-patel-298a83288" target="_blank" rel="noopener noreferrer" className="contact-link">
               <span className="contact-link-icon"><i className="fab fa-linkedin"></i></span>
@@ -384,7 +412,7 @@ function App() {
             <p>Whether you have a project in mind or want to discuss opportunities, I'd love to hear from you.</p>
             <div className="contact-buttons">
               <a href="mailto:hemilpatel0195@gmail.com" className="btn btn-primary"><i className="fas fa-envelope"></i> Send Email</a>
-              <a href="https://linkedin.com/in/hemil-patel" target="_blank" rel="noopener noreferrer" className="btn btn-secondary"><i className="fab fa-linkedin"></i> Connect on LinkedIn</a>
+              <a href="https://linkedin.com/in/hemil-patel-298a83288" target="_blank" rel="noopener noreferrer" className="btn btn-secondary"><i className="fab fa-linkedin"></i> Connect on LinkedIn</a>
             </div>
           </div>
         </div>
