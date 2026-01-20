@@ -104,62 +104,89 @@ function App() {
         <div className="container">
           <h2 className="section-title">Skills & Technologies</h2>
           <p className="section-subtitle">
-            A diverse set of technical skills acquired through academic coursework, personal projects, and professional experience.
+            Programming languages, frameworks, and tools I use to create functional and user-friendly web applications.
           </p>
           
-          <div className="skills-container">
-            <div className="skill-category">
-              <div className="category-header">
-                <span className="category-icon"><i className="fas fa-code"></i></span>
+          <div className="skills-simple">
+            <div className="skill-group">
+              <div className="skill-group-header">
+                <i className="fas fa-code"></i>
                 <h3>Programming Languages</h3>
               </div>
-              <div className="skill-tags">
-                <span className="skill-tag">Java</span>
-                <span className="skill-tag">JavaScript</span>
-                <span className="skill-tag">C</span>
-                <span className="skill-tag">C++</span>
-                <span className="skill-tag">Python</span>
-                <span className="skill-tag">SQL</span>
+              <div className="skill-list">
+                <span className="skill-item-simple">Java</span>
+                <span className="skill-item-simple">JavaScript</span>
+                <span className="skill-item-simple">C</span>
+                <span className="skill-item-simple">C++</span>
+                <span className="skill-item-simple">Python</span>
+                <span className="skill-item-simple">SQL</span>
               </div>
             </div>
 
-            <div className="skill-category">
-              <div className="category-header">
-                <span className="category-icon"><i className="fas fa-layer-group"></i></span>
-                <h3>Frameworks & Tools</h3>
+            <div className="skill-group">
+              <div className="skill-group-header">
+                <i className="fab fa-react"></i>
+                <h3>Frontend Development</h3>
               </div>
-              <div className="skill-tags">
-                <span className="skill-tag">Node.js</span>
-                <span className="skill-tag">React.js</span>
-                <span className="skill-tag">Express.js</span>
-                <span className="skill-tag">HTML/CSS</span>
-                <span className="skill-tag">JavaScript</span>
-                <span className="skill-tag">PHP</span>
+              <div className="skill-list">
+                <span className="skill-item-simple">React.js</span>
+                <span className="skill-item-simple">HTML5</span>
+                <span className="skill-item-simple">CSS3</span>
+                <span className="skill-item-simple">JavaScript</span>
+                <span className="skill-item-simple">Responsive Design</span>
               </div>
             </div>
 
-            <div className="skill-category">
-              <div className="category-header">
-                <span className="category-icon"><i className="fas fa-database"></i></span>
+            <div className="skill-group">
+              <div className="skill-group-header">
+                <i className="fas fa-server"></i>
+                <h3>Backend Development</h3>
+              </div>
+              <div className="skill-list">
+                <span className="skill-item-simple">Node.js</span>
+                <span className="skill-item-simple">Express.js</span>
+                <span className="skill-item-simple">PHP</span>
+                <span className="skill-item-simple">REST APIs</span>
+              </div>
+            </div>
+
+            <div className="skill-group">
+              <div className="skill-group-header">
+                <i className="fas fa-database"></i>
                 <h3>Database</h3>
               </div>
-              <div className="skill-tags">
-                <span className="skill-tag">MongoDB</span>
-                <span className="skill-tag">MySQL</span>
-                <span className="skill-tag">XAMPP</span>
+              <div className="skill-list">
+                <span className="skill-item-simple">MongoDB</span>
+                <span className="skill-item-simple">MySQL</span>
+                <span className="skill-item-simple">XAMPP</span>
               </div>
             </div>
 
-            <div className="skill-category">
-              <div className="category-header">
-                <span className="category-icon"><i className="fas fa-lightbulb"></i></span>
+            <div className="skill-group">
+              <div className="skill-group-header">
+                <i className="fas fa-tools"></i>
+                <h3>Tools & Technologies</h3>
+              </div>
+              <div className="skill-list">
+                <span className="skill-item-simple">Git</span>
+                <span className="skill-item-simple">GitHub</span>
+                <span className="skill-item-simple">VS Code</span>
+                <span className="skill-item-simple">Vite</span>
+                <span className="skill-item-simple">NPM</span>
+                <span className="skill-item-simple">Postman</span>
+              </div>
+            </div>
+
+            <div className="skill-group">
+              <div className="skill-group-header">
+                <i className="fas fa-lightbulb"></i>
                 <h3>Soft Skills</h3>
               </div>
-              <div className="skill-tags">
-                <span className="skill-tag">Time Management</span>
-                <span className="skill-tag">Team Coordination</span>
-                <span className="skill-tag">Self-learning</span>
-                <span className="skill-tag">Resilience</span>
+              <div className="skill-list">
+                <span className="skill-item-simple">Problem Solving</span>
+                <span className="skill-item-simple">Team Work</span>
+                <span className="skill-item-simple">Time Management</span>
+                <span className="skill-item-simple">Self Learning</span>
               </div>
             </div>
           </div>
