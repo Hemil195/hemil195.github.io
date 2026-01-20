@@ -1,10 +1,23 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./styles/tokens.css";
 import "./styles/sections.css";
 import "./App.css";
 import BottomNav from "./components/BottomNav/BottomNav";
 
 function App() {
+  const [roleText, setRoleText] = useState("");
+  const [roleIndex, setRoleIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  const roles = [
+    "Full Stack Developer",
+    "React Developer",
+    "Web Developer",
+    "UI/UX Enthusiast",
+    "Problem Solver",
+    "Tech Enthusiast"
+  ];
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -22,6 +35,29 @@ function App() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const currentRole = roles[roleIndex];
+    const typingSpeed = isDeleting ? 50 : 100;
+    const pauseTime = isDeleting ? 500 : 2000;
+
+    const timer = setTimeout(() => {
+      if (!isDeleting && roleText === currentRole) {
+        setTimeout(() => setIsDeleting(true), pauseTime);
+      } else if (isDeleting && roleText === "") {
+        setIsDeleting(false);
+        setRoleIndex((prev) => (prev + 1) % roles.length);
+      } else {
+        setRoleText(
+          isDeleting
+            ? currentRole.substring(0, roleText.length - 1)
+            : currentRole.substring(0, roleText.length + 1)
+        );
+      }
+    }, typingSpeed);
+
+    return () => clearTimeout(timer);
+  }, [roleText, isDeleting, roleIndex]);
+
   return (
     <div className="app-root">
       {/* Hero Section */}
@@ -29,16 +65,16 @@ function App() {
         <div className="hero-content">
           <div className="hero-greeting">Hi, I'm</div>
           <h1 className="hero-name">Hemil Patel</h1>
-          <div className="hero-role">Full Stack Developer</div>
+          <div className="hero-role">{roleText}<span className="cursor">|</span></div>
           <div className="hero-divider"></div>
           <p className="hero-tagline">
-            I build scalable web applications and craft exceptional digital experiences 
-            using modern technologies. Passionate about solving complex problems through clean, 
-            efficient code.
+            Computer Science Engineering student passionate about creating beautiful, 
+            functional, and user-friendly web applications. Specialized in modern front-end 
+            technologies with expertise in React, JavaScript, and responsive design.
           </p>
           <div className="hero-cta">
-            <a href="#projects" className="btn btn-primary"><i className="fas fa-rocket"></i> View My Work</a>
-            <a href="/Hemil_Patel.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-outline"><i className="fas fa-file-pdf"></i> View Resume</a>
+            <a href="#projects" className="btn btn-primary">View My Work</a>
+            <a href="/Hemil_Patel.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-outline">View Resume</a>
           </div>
           <div className="hero-social">
             <a href="mailto:hemilpatel0195@gmail.com" className="social-link" title="Email">
