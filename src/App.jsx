@@ -196,72 +196,80 @@ function App() {
       {/* Education Section */}
       <section id="education" className="section section--education reveal">
         <div className="container">
-          <h2 className="section-title">Education</h2>
+          <h2 className="section-title">Education Journey</h2>
           <p className="section-subtitle">
-            Academic foundation with excellent performance and relevant coursework in software development.
+            My academic path in Computer Science and Engineering with a focus on building strong technical foundations.
           </p>
           
-          <div className="education-list">
-            <div className="education-card">
-              <div className="edu-header">
-                <div className="edu-icon"><i className="fas fa-graduation-cap"></i></div>
-                <div className="edu-main">
-                  <h3>Charusat University, Anand, Gujarat, India</h3>
-                  <p className="edu-meta">July 2023 - Present • Computer Science and Engineering Department</p>
+          <div className="education-timeline">
+            <div className="timeline-item">
+              <div className="timeline-dot"></div>
+              <div className="timeline-content">
+                <div className="timeline-date">2023 - Present</div>
+                <div className="edu-card-modern">
+                  <div className="edu-card-header">
+                    <div className="edu-badge">Current</div>
+                  </div>
+                  <h3 className="edu-title">Computer Science and Engineering</h3>
+                  <p className="edu-subtitle">Bachelor of Technology</p>
+                  <div className="edu-institution">
+                    <span>Charusat University, Anand, Gujarat</span>
+                  </div>
+                  <div className="edu-details">
+                    <div className="edu-stat">
+                      <span className="stat-label">CGPA</span>
+                      <span className="stat-value">9.65</span>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div className="edu-body">
-                <div className="edu-degree">
-                  <strong>Bachelor of Technology - Computer Science and Engineering</strong>
-                  <span className="edu-grade">CGPA: 9.65</span>
-                </div>
-                <p className="edu-coursework">
-                  <strong>Relevant Coursework:</strong> Data Structures and Algorithms, 
-                  Object-Oriented Programming, Database Management Systems, Web Development, 
-                  Computer Networks, Software Engineering
-                </p>
               </div>
             </div>
 
-            <div className="education-card">
-              <div className="edu-header">
-                <div className="edu-icon"><i className="fas fa-school"></i></div>
-                <div className="edu-main">
-                  <h3>Lokmanya Vidhyalaya, Rander, Surat</h3>
-                  <p className="edu-meta">2021 - 2023 • Science Stream</p>
+            <div className="timeline-item">
+              <div className="timeline-dot"></div>
+              <div className="timeline-content">
+                <div className="timeline-date">2021 - 2023</div>
+                <div className="edu-card-modern">
+                  <h3 className="edu-title">Higher Secondary Certificate</h3>
+                  <p className="edu-subtitle">Science Stream (HSC)</p>
+                  <div className="edu-institution">
+                    <span>Lokmanya Vidhyalaya, Rander, Surat</span>
+                  </div>
+                  <div className="edu-details">
+                    <div className="edu-stat">
+                      <span className="stat-label">Parcentage</span>
+                      <span className="stat-value">78%</span>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div className="edu-body">
-                <div className="edu-degree">
-                  <strong>Higher Secondary Certificate (HSC)</strong>
-                  <span className="edu-grade">Score: 78%</span>
-                </div>
-                <p className="edu-coursework">
-                  <strong>Relevant Coursework:</strong> Physics, Chemistry, Mathematics, Computer Science
-                </p>
               </div>
             </div>
 
-            <div className="education-card">
-              <div className="edu-header">
-                <div className="edu-icon"><i className="fas fa-book-open"></i></div>
-                <div className="edu-main">
-                  <h3>Smt. I. N. Tekrawala High School, Surat</h3>
-                  <p className="edu-meta">2020 - 2021</p>
-                </div>
-              </div>
-              <div className="edu-body">
-                <div className="edu-degree">
-                  <strong>Secondary School Certificate (SSC)</strong>
-                  <span className="edu-grade">Score: 81%</span>
+            <div className="timeline-item">
+              <div className="timeline-dot"></div>
+              <div className="timeline-content">
+                <div className="timeline-date">2020 - 2021</div>
+                <div className="edu-card-modern">
+                  <div className="edu-card-header">
+                    <div className="edu-badge">Foundation</div>
+                  </div>
+                  <h3 className="edu-title">Secondary School Certificate</h3>
+                  <p className="edu-subtitle">SSC</p>
+                  <div className="edu-institution">
+                    <span>Smt. I. N. Tekrawala High School, Surat</span>
+                  </div>
+                  <div className="edu-details">
+                    <div className="edu-stat">
+                      <span className="stat-label">Parcentage</span>
+                      <span className="stat-value">81%</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-
-
 
       {/* Projects Section */}
       <section id="projects" className="section section--projects reveal">
