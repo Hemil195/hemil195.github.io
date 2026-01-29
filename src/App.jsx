@@ -193,84 +193,6 @@ function App() {
         </div>
       </section>
 
-      {/* Education Section */}
-      <section id="education" className="section section--education reveal">
-        <div className="container">
-          <h2 className="section-title">Education Journey</h2>
-          <p className="section-subtitle">
-            My academic path in Computer Science and Engineering with a focus on building strong technical foundations.
-          </p>
-          
-          <div className="education-timeline">
-            <div className="timeline-item">
-              <div className="timeline-dot"></div>
-              <div className="timeline-content">
-                <div className="timeline-date">2023 - Present</div>
-                <div className="edu-card-modern">
-                  <div className="edu-card-header">
-                    <div className="edu-badge">Current</div>
-                  </div>
-                  <h3 className="edu-title">Computer Science and Engineering</h3>
-                  <p className="edu-subtitle">Bachelor of Technology</p>
-                  <div className="edu-institution">
-                    <span>Charusat University, Anand, Gujarat</span>
-                  </div>
-                  <div className="edu-details">
-                    <div className="edu-stat">
-                      <span className="stat-label">CGPA</span>
-                      <span className="stat-value">9.65</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="timeline-item">
-              <div className="timeline-dot"></div>
-              <div className="timeline-content">
-                <div className="timeline-date">2021 - 2023</div>
-                <div className="edu-card-modern">
-                  <h3 className="edu-title">Higher Secondary Certificate</h3>
-                  <p className="edu-subtitle">Science Stream (HSC)</p>
-                  <div className="edu-institution">
-                    <span>Lokmanya Vidhyalaya, Rander, Surat</span>
-                  </div>
-                  <div className="edu-details">
-                    <div className="edu-stat">
-                      <span className="stat-label">Parcentage</span>
-                      <span className="stat-value">78%</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="timeline-item">
-              <div className="timeline-dot"></div>
-              <div className="timeline-content">
-                <div className="timeline-date">2020 - 2021</div>
-                <div className="edu-card-modern">
-                  <div className="edu-card-header">
-                    <div className="edu-badge">Foundation</div>
-                  </div>
-                  <h3 className="edu-title">Secondary School Certificate</h3>
-                  <p className="edu-subtitle">SSC</p>
-                  <div className="edu-institution">
-                    <span>Smt. I. N. Tekrawala High School, Surat</span>
-                  </div>
-                  <div className="edu-details">
-                    <div className="edu-stat">
-                      <span className="stat-label">Parcentage</span>
-                      <span className="stat-value">81%</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Projects Section */}
       <section id="projects" className="section section--projects reveal">
         <div className="container">
@@ -381,6 +303,84 @@ function App() {
                   <div className="project-links">
                     <a href="https://github.com/Hemil195" className="project-btn" title="View Clubs Management System code"><i className="fas fa-code"></i> Code</a>
                     <span className="project-btn" style={{opacity: 0.6, cursor: "not-allowed"}} title="Demo not available"><i className="fas fa-rocket"></i> Demo</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Education Section */}
+      <section id="education" className="section section--education reveal">
+        <div className="container">
+          <h2 className="section-title">Education Journey</h2>
+          <p className="section-subtitle">
+            My academic path in Computer Science and Engineering with a focus on building strong technical foundations.
+          </p>
+          
+          <div className="education-timeline">
+            <div className="timeline-item">
+              <div className="timeline-dot"></div>
+              <div className="timeline-content">
+                <div className="timeline-date">2023 - Present</div>
+                <div className="edu-card-modern">
+                  <div className="edu-card-header">
+                    <div className="edu-badge">Current</div>
+                  </div>
+                  <h3 className="edu-title">Computer Science and Engineering</h3>
+                  <p className="edu-subtitle">Bachelor of Technology</p>
+                  <div className="edu-institution">
+                    <span>Charusat University, Anand, Gujarat</span>
+                  </div>
+                  <div className="edu-details">
+                    <div className="edu-stat">
+                      <span className="stat-label">CGPA</span>
+                      <span className="stat-value">9.65</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="timeline-item">
+              <div className="timeline-dot"></div>
+              <div className="timeline-content">
+                <div className="timeline-date">2021 - 2023</div>
+                <div className="edu-card-modern">
+                  <h3 className="edu-title">Higher Secondary Certificate</h3>
+                  <p className="edu-subtitle">Science Stream (HSC)</p>
+                  <div className="edu-institution">
+                    <span>Lokmanya Vidhyalaya, Rander, Surat</span>
+                  </div>
+                  <div className="edu-details">
+                    <div className="edu-stat">
+                      <span className="stat-label">Parcentage</span>
+                      <span className="stat-value">78%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="timeline-item">
+              <div className="timeline-dot"></div>
+              <div className="timeline-content">
+                <div className="timeline-date">2020 - 2021</div>
+                <div className="edu-card-modern">
+                  <div className="edu-card-header">
+                    <div className="edu-badge">Foundation</div>
+                  </div>
+                  <h3 className="edu-title">Secondary School Certificate</h3>
+                  <p className="edu-subtitle">SSC</p>
+                  <div className="edu-institution">
+                    <span>Smt. I. N. Tekrawala High School, Surat</span>
+                  </div>
+                  <div className="edu-details">
+                    <div className="edu-stat">
+                      <span className="stat-label">Parcentage</span>
+                      <span className="stat-value">81%</span>
+                    </div>
                   </div>
                 </div>
               </div>
