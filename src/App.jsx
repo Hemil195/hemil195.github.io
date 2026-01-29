@@ -249,8 +249,36 @@ function App() {
                   </div>
                   <div className="project-badge"><i className="fas fa-trophy"></i> Full-Stack MERN Application</div>
                   <div className="project-links">
-                    <a href="https://github.com/cs-cspit/23CS-SEM4-CSE210_64_78_83" className="project-btn"><i className="fas fa-code"></i> Code</a>
-                    <a href="https://fresh-track-six.vercel.app/" className="project-btn"><i className="fas fa-rocket"></i> Demo</a>
+                    <a href="https://github.com/cs-cspit/23CS-SEM4-CSE210_64_78_83" target="_blank" rel="noopener noreferrer" className="project-btn"><i className="fas fa-code"></i> Code</a>
+                    <a href="https://fresh-track-six.vercel.app/" target="_blank" rel="noopener noreferrer" className="project-btn"><i className="fas fa-rocket"></i> Demo</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="project-card">
+              <div className="project-header">
+                <span className="project-year">2025</span>
+              </div>
+              <div className="project-content">
+                <h3>Veg Delight - Restaurant Order System</h3>
+                <p>Built a complete restaurant order management system for vegetarian cuisine. Implemented online ordering with shopping cart, checkout, and order tracking. Created admin dashboard for menu management, order processing, and sales reports. Features responsive design with Bootstrap and SQL Server database.</p>
+                <div className="project-footer">
+                  <div className="project-tech">
+                    <span className="tech-label">Tech Stack:</span>
+                    <div className="tech-stack">
+                      <span className="tech-item">ASP.NET MVC</span>
+                      <span className="tech-item">C#</span>
+                      <span className="tech-item">.NET Framework</span>
+                      <span className="tech-item">SQL Server</span>
+                      <span className="tech-item">Bootstrap</span>
+                      <span className="tech-item">jQuery</span>
+                    </div>
+                  </div>
+                  <div className="project-badge"><i className="fas fa-trophy"></i> Full-Stack Restaurant Management System</div>
+                  <div className="project-links">
+                    <a href="https://github.com/Hemil195/Delight-Restaurant" target="_blank" rel="noopener noreferrer" className="project-btn"><i className="fas fa-code"></i> Code</a>
+                    <span className="project-btn" style={{opacity: 0.6, cursor: "not-allowed"}} title="Demo not available"><i className="fas fa-rocket"></i> Demo</span>
                   </div>
                 </div>
               </div>
@@ -274,7 +302,7 @@ function App() {
                   </div>
                   <div className="project-badge"><i className="fas fa-trophy"></i> Python-Based Application</div>
                   <div className="project-links">
-                    <a href="https://github.com/Hemil195" className="project-btn" title="View Event Management System code"><i className="fas fa-code"></i> Code</a>
+                    <a href="https://github.com/Hemil195/Event-Management-System" target="_blank" rel="noopener noreferrer" className="project-btn" title="View Event Management System code"><i className="fas fa-code"></i> Code</a>
                     <span className="project-btn" style={{opacity: 0.6, cursor: "not-allowed"}} title="Demo not available"><i className="fas fa-rocket"></i> Demo</span>
                   </div>
                 </div>
@@ -301,7 +329,7 @@ function App() {
                   </div>
                   <div className="project-badge"><i className="fas fa-trophy"></i> Responsive Web Application</div>
                   <div className="project-links">
-                    <a href="https://github.com/Hemil195" className="project-btn" title="View Clubs Management System code"><i className="fas fa-code"></i> Code</a>
+                    <a href="https://github.com/Hemil195/club_management" target="_blank" rel="noopener noreferrer" className="project-btn" title="View Clubs Management System code"><i className="fas fa-code"></i> Code</a>
                     <span className="project-btn" style={{opacity: 0.6, cursor: "not-allowed"}} title="Demo not available"><i className="fas fa-rocket"></i> Demo</span>
                   </div>
                 </div>
