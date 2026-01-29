@@ -3,6 +3,7 @@ import "./styles/tokens.css";
 import "./styles/sections.css";
 import "./App.css";
 import BottomNav from "./components/BottomNav/BottomNav";
+import ProjectCard from "./components/ProjectCard/ProjectCard";
 
 function App() {
   const [roleText, setRoleText] = useState("");
@@ -57,6 +58,55 @@ function App() {
 
     return () => clearTimeout(timer);
   }, [roleText, isDeleting, roleIndex]);
+
+  // Projects data
+  const projects = [
+    {
+      year: "2025",
+      title: "Jay Jalaram Electricals - Business Management System",
+      description: "Developed a comprehensive business management system for electrical services. Automated GST-compliant invoice generation and billing. Implemented role-based access control for Admin, Client, and User roles. Built real-time dashboard analytics with payment tracking and professional PDF exports.",
+      technologies: ["MongoDB", "Express", "React", "Node.js", "JWT", "Tailwind CSS"],
+      badge: "Full-Stack Business Management System",
+      codeLink: null,
+      demoLink: "https://jjelectricals.vercel.app/"
+    },
+    {
+      year: "2025",
+      title: "FreshTrack",
+      description: "Built a MERN stack app to reduce food waste via smart inventory control. Integrated AI-based demand prediction and expiry-based dynamic discounts. Automated donation tracking for unsold items. Created dashboards for inventory, sold, donated, and expired products.",
+      technologies: ["MongoDB", "Express", "React", "Node.js"],
+      badge: "Full-Stack MERN Application",
+      codeLink: "https://github.com/cs-cspit/23CS-SEM4-CSE210_64_78_83",
+      demoLink: "https://fresh-track-six.vercel.app/"
+    },
+    {
+      year: "2025",
+      title: "Veg Delight - Restaurant Order System",
+      description: "Built a complete restaurant order management system for vegetarian cuisine. Implemented online ordering with shopping cart, checkout, and order tracking. Created admin dashboard for menu management, order processing, and sales reports. Features responsive design with Bootstrap and SQL Server database.",
+      technologies: ["ASP.NET MVC", "C#", ".NET Framework", "SQL Server", "Bootstrap", "jQuery"],
+      badge: "Full-Stack Restaurant Management System",
+      codeLink: "https://github.com/Hemil195/Delight-Restaurant",
+      demoLink: null
+    },
+    {
+      year: "2025",
+      title: "Event Management System",
+      description: "Developed an intuitive event management system using Python and Gradio. Implemented event creation, user registration, and real-time tracking. Enabled admin approval workflows and role-based dashboards. Used CSV files for persistent storage with validation.",
+      technologies: ["Python", "Gradio", "CSV"],
+      badge: "Python-Based Application",
+      codeLink: "https://github.com/Hemil195",
+      demoLink: null
+    },
+    {
+      year: "2024",
+      title: "Clubs Management System",
+      description: "Built a web app to manage college club activities and boost student involvement. Created interfaces for students, faculty coordinators, and admins. Implemented club registration, event listings, feedback, and participation logs. Tech stack: HTML, CSS, JavaScript, PHP, MySQL (XAMPP).",
+      technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
+      badge: "Responsive Web Application",
+      codeLink: "https://github.com/Hemil195",
+      demoLink: null
+    }
+  ];
 
   return (
     <div className="app-root">
@@ -202,139 +252,9 @@ function App() {
           </p>
           
           <div className="projects-grid">
-            <div className="project-card">
-              <div className="project-header">
-                <span className="project-year">2025</span>
-              </div>
-              <div className="project-content">
-                <h3>Jay Jalaram Electricals - Business Management System</h3>
-                <p>Developed a comprehensive business management system for electrical services. Automated GST-compliant invoice generation and billing. Implemented role-based access control for Admin, Client, and User roles. Built real-time dashboard analytics with payment tracking and professional PDF exports.</p>
-                <div className="project-footer">
-                  <div className="project-tech">
-                    <span className="tech-label">Tech Stack:</span>
-                    <div className="tech-stack">
-                      <span className="tech-item">MongoDB</span>
-                      <span className="tech-item">Express</span>
-                      <span className="tech-item">React</span>
-                      <span className="tech-item">Node.js</span>
-                      <span className="tech-item">JWT</span>
-                      <span className="tech-item">Tailwind CSS</span>
-                    </div>
-                  </div>
-                  <div className="project-badge"><i className="fas fa-trophy"></i> Full-Stack Business Management System</div>
-                  <div className="project-links">
-                    <span className="project-btn" style={{opacity: 0.6, cursor: "not-allowed"}} title="Private repository"><i className="fas fa-code"></i> Code</span>
-                    <a href="https://jjelectricals.vercel.app/" target="_blank" rel="noopener noreferrer" className="project-btn"><i className="fas fa-rocket"></i> Live Demo</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="project-card">
-              <div className="project-header">
-                <span className="project-year">2025</span>
-              </div>
-              <div className="project-content">
-                <h3>FreshTrack</h3>
-                <p>Built a MERN stack app to reduce food waste via smart inventory control. Integrated AI-based demand prediction and expiry-based dynamic discounts. Automated donation tracking for unsold items. Created dashboards for inventory, sold, donated, and expired products.</p>
-                <div className="project-footer">
-                  <div className="project-tech">
-                    <span className="tech-label">Tech Stack:</span>
-                    <div className="tech-stack">
-                      <span className="tech-item">MongoDB</span>
-                      <span className="tech-item">Express</span>
-                      <span className="tech-item">React</span>
-                      <span className="tech-item">Node.js</span>
-                    </div>
-                  </div>
-                  <div className="project-badge"><i className="fas fa-trophy"></i> Full-Stack MERN Application</div>
-                  <div className="project-links">
-                    <a href="https://github.com/cs-cspit/23CS-SEM4-CSE210_64_78_83" target="_blank" rel="noopener noreferrer" className="project-btn"><i className="fas fa-code"></i> Code</a>
-                    <a href="https://fresh-track-six.vercel.app/" target="_blank" rel="noopener noreferrer" className="project-btn"><i className="fas fa-rocket"></i> Demo</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="project-card">
-              <div className="project-header">
-                <span className="project-year">2025</span>
-              </div>
-              <div className="project-content">
-                <h3>Veg Delight - Restaurant Order System</h3>
-                <p>Built a complete restaurant order management system for vegetarian cuisine. Implemented online ordering with shopping cart, checkout, and order tracking. Created admin dashboard for menu management, order processing, and sales reports. Features responsive design with Bootstrap and SQL Server database.</p>
-                <div className="project-footer">
-                  <div className="project-tech">
-                    <span className="tech-label">Tech Stack:</span>
-                    <div className="tech-stack">
-                      <span className="tech-item">ASP.NET MVC</span>
-                      <span className="tech-item">C#</span>
-                      <span className="tech-item">.NET Framework</span>
-                      <span className="tech-item">SQL Server</span>
-                      <span className="tech-item">Bootstrap</span>
-                      <span className="tech-item">jQuery</span>
-                    </div>
-                  </div>
-                  <div className="project-badge"><i className="fas fa-trophy"></i> Full-Stack Restaurant Management System</div>
-                  <div className="project-links">
-                    <a href="https://github.com/Hemil195/Delight-Restaurant" target="_blank" rel="noopener noreferrer" className="project-btn"><i className="fas fa-code"></i> Code</a>
-                    <span className="project-btn" style={{opacity: 0.6, cursor: "not-allowed"}} title="Demo not available"><i className="fas fa-rocket"></i> Demo</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="project-card">
-              <div className="project-header">
-                <span className="project-year">2025</span>
-              </div>
-              <div className="project-content">
-                <h3>Event Management System</h3>
-                <p>Developed an intuitive event management system using Python and Gradio. Implemented event creation, user registration, and real-time tracking. Enabled admin approval workflows and role-based dashboards. Used CSV files for persistent storage with validation.</p>
-                <div className="project-footer">
-                  <div className="project-tech">
-                    <span className="tech-label">Tech Stack:</span>
-                    <div className="tech-stack">
-                      <span className="tech-item">Python</span>
-                      <span className="tech-item">Gradio</span>
-                      <span className="tech-item">CSV</span>
-                    </div>
-                  </div>
-                  <div className="project-badge"><i className="fas fa-trophy"></i> Python-Based Application</div>
-                  <div className="project-links">
-                    <a href="https://github.com/Hemil195/Event-Management-System" target="_blank" rel="noopener noreferrer" className="project-btn" title="View Event Management System code"><i className="fas fa-code"></i> Code</a>
-                    <span className="project-btn" style={{opacity: 0.6, cursor: "not-allowed"}} title="Demo not available"><i className="fas fa-rocket"></i> Demo</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="project-card">
-              <div className="project-header">
-                <span className="project-year">2024</span>
-              </div>
-              <div className="project-content">
-                <h3>Clubs Management System</h3>
-                <p>Built a web app to manage college club activities and boost student involvement. Created interfaces for students, faculty coordinators, and admins. Implemented club registration, event listings, feedback, and participation logs. Tech stack: HTML, CSS, JavaScript, PHP, MySQL (XAMPP).</p>
-                <div className="project-footer">
-                  <div className="project-tech">
-                    <span className="tech-label">Tech Stack:</span>
-                    <div className="tech-stack">
-                      <span className="tech-item">HTML</span>
-                      <span className="tech-item">CSS</span>
-                      <span className="tech-item">JavaScript</span>
-                      <span className="tech-item">PHP</span>
-                      <span className="tech-item">MySQL</span>
-                    </div>
-                  </div>
-                  <div className="project-badge"><i className="fas fa-trophy"></i> Responsive Web Application</div>
-                  <div className="project-links">
-                    <a href="https://github.com/Hemil195/club_management" target="_blank" rel="noopener noreferrer" className="project-btn" title="View Clubs Management System code"><i className="fas fa-code"></i> Code</a>
-                    <span className="project-btn" style={{opacity: 0.6, cursor: "not-allowed"}} title="Demo not available"><i className="fas fa-rocket"></i> Demo</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {projects.map((project, index) => (
+              <ProjectCard key={index} project={project} />
+            ))}
           </div>
         </div>
       </section>
