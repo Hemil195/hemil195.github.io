@@ -5,6 +5,7 @@ import "./App.css";
 import BottomNav from "./components/BottomNav/BottomNav";
 import ProjectCard from "./components/ProjectCard/ProjectCard";
 import SkillGroup from "./components/SkillGroup/SkillGroup";
+import EducationCard from "./components/EducationCard/EducationCard";
 
 function App() {
   const [roleText, setRoleText] = useState("");
@@ -143,6 +144,37 @@ function App() {
     }
   ];
 
+  // Education data
+  const education = [
+    {
+      date: "2023 - Present",
+      badge: "Current",
+      title: "Computer Science and Engineering",
+      subtitle: "Bachelor of Technology",
+      institution: "Charusat University, Anand, Gujarat",
+      statLabel: "CGPA",
+      statValue: "9.65"
+    },
+    {
+      date: "2021 - 2023",
+      badge: null,
+      title: "Higher Secondary Certificate",
+      subtitle: "Science Stream (HSC)",
+      institution: "Lokmanya Vidhyalaya, Rander, Surat",
+      statLabel: "Parcentage",
+      statValue: "78%"
+    },
+    {
+      date: "2020 - 2021",
+      badge: "Foundation",
+      title: "Secondary School Certificate",
+      subtitle: "SSC",
+      institution: "Smt. I. N. Tekrawala High School, Surat",
+      statLabel: "Parcentage",
+      statValue: "81%"
+    }
+  ];
+
   return (
     <div className="app-root">
       {/* Hero Section */}
@@ -230,71 +262,18 @@ function App() {
           </p>
           
           <div className="education-timeline">
-            <div className="timeline-item">
-              <div className="timeline-dot"></div>
-              <div className="timeline-content">
-                <div className="timeline-date">2023 - Present</div>
-                <div className="edu-card-modern">
-                  <div className="edu-card-header">
-                    <div className="edu-badge">Current</div>
-                  </div>
-                  <h3 className="edu-title">Computer Science and Engineering</h3>
-                  <p className="edu-subtitle">Bachelor of Technology</p>
-                  <div className="edu-institution">
-                    <span>Charusat University, Anand, Gujarat</span>
-                  </div>
-                  <div className="edu-details">
-                    <div className="edu-stat">
-                      <span className="stat-label">CGPA</span>
-                      <span className="stat-value">9.65</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="timeline-item">
-              <div className="timeline-dot"></div>
-              <div className="timeline-content">
-                <div className="timeline-date">2021 - 2023</div>
-                <div className="edu-card-modern">
-                  <h3 className="edu-title">Higher Secondary Certificate</h3>
-                  <p className="edu-subtitle">Science Stream (HSC)</p>
-                  <div className="edu-institution">
-                    <span>Lokmanya Vidhyalaya, Rander, Surat</span>
-                  </div>
-                  <div className="edu-details">
-                    <div className="edu-stat">
-                      <span className="stat-label">Parcentage</span>
-                      <span className="stat-value">78%</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="timeline-item">
-              <div className="timeline-dot"></div>
-              <div className="timeline-content">
-                <div className="timeline-date">2020 - 2021</div>
-                <div className="edu-card-modern">
-                  <div className="edu-card-header">
-                    <div className="edu-badge">Foundation</div>
-                  </div>
-                  <h3 className="edu-title">Secondary School Certificate</h3>
-                  <p className="edu-subtitle">SSC</p>
-                  <div className="edu-institution">
-                    <span>Smt. I. N. Tekrawala High School, Surat</span>
-                  </div>
-                  <div className="edu-details">
-                    <div className="edu-stat">
-                      <span className="stat-label">Parcentage</span>
-                      <span className="stat-value">81%</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {education.map((edu, index) => (
+              <EducationCard
+                key={index}
+                date={edu.date}
+                badge={edu.badge}
+                title={edu.title}
+                subtitle={edu.subtitle}
+                institution={edu.institution}
+                statLabel={edu.statLabel}
+                statValue={edu.statValue}
+              />
+            ))}
           </div>
         </div>
       </section>
