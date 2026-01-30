@@ -943,7 +943,20 @@
 
 .certification-list {
   display: grid;
-  gap: 16px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 968px) {
+  .certification-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .certification-list {
+    grid-template-columns: 1fr;
+  }
 }
 
 .cert-item {
@@ -964,6 +977,21 @@
   font-size: 17px;
   color: var(--text);
   margin: 0 0 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cert-link {
+  color: var(--primary);
+  font-size: 14px;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+}
+
+.cert-link:hover {
+  opacity: 1;
+  transform: translateY(-2px);
 }
 
 .cert-item p {

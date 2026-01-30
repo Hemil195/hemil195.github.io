@@ -6,6 +6,8 @@ import BottomNav from "./components/BottomNav/BottomNav";
 import ProjectCard from "./components/ProjectCard/ProjectCard";
 import SkillGroup from "./components/SkillGroup/SkillGroup";
 import EducationCard from "./components/EducationCard/EducationCard";
+import AchievementCard from "./components/AchievementCard/AchievementCard";
+import CertificationItem from "./components/CertificationItem/CertificationItem";
 
 function App() {
   const [roleText, setRoleText] = useState("");
@@ -175,6 +177,49 @@ function App() {
     }
   ];
 
+  // Achievements data
+  const achievements = [
+    {
+      title: "Codilio Platform",
+      position: "450+ Problems Solved",
+      description: "Solved 450+ Data Structures and Algorithms problems across multiple competitive programming platforms.",
+      meta: null
+    },
+    {
+      title: "Technical Treasure Hunt (DSA-Based)",
+      position: "Winner",
+      description: "Won the Department Level Technical Treasure Hunt competition in 2024.",
+      meta: [
+        { icon: "far fa-calendar", text: "2024" },
+        { icon: "fas fa-building", text: "Department Level" }
+      ]
+    }
+  ];
+
+  // Certifications data
+  const certifications = [
+    {
+      title: "Design and Analysis of Algorithms - NPTEL",
+      description: "Completed comprehensive course on algorithm design and analysis",
+      certificateLink: "#"
+    },
+    {
+      title: "Data Structures and Algorithms using Java - NPTEL",
+      description: "Advanced DSA certification focusing on Java implementation",
+      certificateLink: "#"
+    },
+    {
+      title: "Database Management Systems (DBMS) - NPTEL",
+      description: "Comprehensive study of database concepts and management",
+      certificateLink: "#"
+    },
+    {
+      title: "Getting Started with AI on Jetson Nano - NVIDIA",
+      description: "Introduction to AI and machine learning on edge devices",
+      certificateLink: "#"
+    }
+  ];
+
   return (
     <div className="app-root">
       {/* Hero Section */}
@@ -290,51 +335,29 @@ function App() {
             <div className="achievement-category">
               <h3 className="achievement-category-title"><i className="fas fa-laptop-code"></i> Competitive Programming</h3>
               
-              <div className="achievement-card">
-                <div className="achievement-header">
-                  <h4>Codilio Platform</h4>
-                  <span className="achievement-position">450+ Problems Solved</span>
-                </div>
-                <p className="achievement-desc">
-                  Solved 450+ Data Structures and Algorithms problems across multiple competitive programming platforms.
-                </p>
-              </div>
-
-              <div className="achievement-card">
-                <div className="achievement-header">
-                  <h4>Technical Treasure Hunt (DSA-Based)</h4>
-                  <span className="achievement-position">Winner</span>
-                </div>
-                <p className="achievement-desc">
-                  Won the Department Level Technical Treasure Hunt competition in 2024.
-                </p>
-                <div className="achievement-meta">
-                  <span className="meta-item"><i className="far fa-calendar"></i> 2024</span>
-                  <span className="meta-item"><i className="fas fa-building"></i> Department Level</span>
-                </div>
-              </div>
+              {achievements.map((achievement, index) => (
+                <AchievementCard
+                  key={index}
+                  title={achievement.title}
+                  position={achievement.position}
+                  description={achievement.description}
+                  meta={achievement.meta}
+                />
+              ))}
             </div>
 
             <div className="achievement-category">
               <h3 className="achievement-category-title"><i className="fas fa-certificate"></i> Certifications</h3>
               
               <div className="certification-list">
-                <div className="cert-item">
-                  <h4>Design and Analysis of Algorithms - NPTEL</h4>
-                  <p>Completed comprehensive course on algorithm design and analysis</p>
-                </div>
-                <div className="cert-item">
-                  <h4>Data Structures and Algorithms using Java - NPTEL</h4>
-                  <p>Advanced DSA certification focusing on Java implementation</p>
-                </div>
-                <div className="cert-item">
-                  <h4>Database Management Systems (DBMS) - NPTEL</h4>
-                  <p>Comprehensive study of database concepts and management</p>
-                </div>
-                <div className="cert-item">
-                  <h4>Getting Started with AI on Jetson Nano - NVIDIA</h4>
-                  <p>Introduction to AI and machine learning on edge devices</p>
-                </div>
+                {certifications.map((cert, index) => (
+                  <CertificationItem
+                    key={index}
+                    title={cert.title}
+                    description={cert.description}
+                    certificateLink={cert.certificateLink}
+                  />
+                ))}
               </div>
             </div>
           </div>
