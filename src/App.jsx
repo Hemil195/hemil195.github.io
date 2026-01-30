@@ -4,6 +4,7 @@ import "./styles/sections.css";
 import "./App.css";
 import BottomNav from "./components/BottomNav/BottomNav";
 import ProjectCard from "./components/ProjectCard/ProjectCard";
+import SkillGroup from "./components/SkillGroup/SkillGroup";
 
 function App() {
   const [roleText, setRoleText] = useState("");
@@ -108,6 +109,40 @@ function App() {
     }
   ];
 
+  // Skills data
+  const skillGroups = [
+    {
+      icon: "fas fa-code",
+      title: "Programming Languages",
+      skills: ["Java", "JavaScript", "C", "C++", "Python", "SQL"]
+    },
+    {
+      icon: "fab fa-react",
+      title: "Frontend Development",
+      skills: ["React.js", "HTML5", "CSS3", "JavaScript", "Responsive Design"]
+    },
+    {
+      icon: "fas fa-server",
+      title: "Backend Development",
+      skills: ["Node.js", "Express.js", "PHP", "REST APIs"]
+    },
+    {
+      icon: "fas fa-database",
+      title: "Database",
+      skills: ["MongoDB", "MySQL", "XAMPP"]
+    },
+    {
+      icon: "fas fa-tools",
+      title: "Tools & Technologies",
+      skills: ["Git", "GitHub", "VS Code", "Vite", "NPM", "Postman"]
+    },
+    {
+      icon: "fas fa-lightbulb",
+      title: "Soft Skills",
+      skills: ["Problem Solving", "Team Work", "Time Management", "Self Learning"]
+    }
+  ];
+
   return (
     <div className="app-root">
       {/* Hero Section */}
@@ -158,87 +193,14 @@ function App() {
           </p>
           
           <div className="skills-simple">
-            <div className="skill-group">
-              <div className="skill-group-header">
-                <i className="fas fa-code"></i>
-                <h3>Programming Languages</h3>
-              </div>
-              <div className="skill-list">
-                <span className="skill-item-simple">Java</span>
-                <span className="skill-item-simple">JavaScript</span>
-                <span className="skill-item-simple">C</span>
-                <span className="skill-item-simple">C++</span>
-                <span className="skill-item-simple">Python</span>
-                <span className="skill-item-simple">SQL</span>
-              </div>
-            </div>
-
-            <div className="skill-group">
-              <div className="skill-group-header">
-                <i className="fab fa-react"></i>
-                <h3>Frontend Development</h3>
-              </div>
-              <div className="skill-list">
-                <span className="skill-item-simple">React.js</span>
-                <span className="skill-item-simple">HTML5</span>
-                <span className="skill-item-simple">CSS3</span>
-                <span className="skill-item-simple">JavaScript</span>
-                <span className="skill-item-simple">Responsive Design</span>
-              </div>
-            </div>
-
-            <div className="skill-group">
-              <div className="skill-group-header">
-                <i className="fas fa-server"></i>
-                <h3>Backend Development</h3>
-              </div>
-              <div className="skill-list">
-                <span className="skill-item-simple">Node.js</span>
-                <span className="skill-item-simple">Express.js</span>
-                <span className="skill-item-simple">PHP</span>
-                <span className="skill-item-simple">REST APIs</span>
-              </div>
-            </div>
-
-            <div className="skill-group">
-              <div className="skill-group-header">
-                <i className="fas fa-database"></i>
-                <h3>Database</h3>
-              </div>
-              <div className="skill-list">
-                <span className="skill-item-simple">MongoDB</span>
-                <span className="skill-item-simple">MySQL</span>
-                <span className="skill-item-simple">XAMPP</span>
-              </div>
-            </div>
-
-            <div className="skill-group">
-              <div className="skill-group-header">
-                <i className="fas fa-tools"></i>
-                <h3>Tools & Technologies</h3>
-              </div>
-              <div className="skill-list">
-                <span className="skill-item-simple">Git</span>
-                <span className="skill-item-simple">GitHub</span>
-                <span className="skill-item-simple">VS Code</span>
-                <span className="skill-item-simple">Vite</span>
-                <span className="skill-item-simple">NPM</span>
-                <span className="skill-item-simple">Postman</span>
-              </div>
-            </div>
-
-            <div className="skill-group">
-              <div className="skill-group-header">
-                <i className="fas fa-lightbulb"></i>
-                <h3>Soft Skills</h3>
-              </div>
-              <div className="skill-list">
-                <span className="skill-item-simple">Problem Solving</span>
-                <span className="skill-item-simple">Team Work</span>
-                <span className="skill-item-simple">Time Management</span>
-                <span className="skill-item-simple">Self Learning</span>
-              </div>
-            </div>
+            {skillGroups.map((group, index) => (
+              <SkillGroup 
+                key={index} 
+                icon={group.icon} 
+                title={group.title} 
+                skills={group.skills} 
+              />
+            ))}
           </div>
         </div>
       </section>
