@@ -6,38 +6,41 @@ function BottomNav() {
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
-    const handleScroll = () => {
-      // Show back to top button after scrolling down
-      setShowBackToTop(window.scrollY > 400);
-
-      // Update active section based on scroll position
-      const sections = ['home', 'skills', 'projects', 'education', 'achievements', 'contact'];
-      
-      // Find which section is currently in view
-      let current = 'home';
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          // Check if section is in viewport (more lenient detection)
-          if (rect.top <= 200 && rect.bottom >= 100) {
-            current = section;
-          }
-        }
-      }
-      setActiveSection(current);
+    const sections = document.querySelectorAll('section[id]');
+    
+    const observerOptions = {
+      root: null,
+      rootMargin: '-50% 0px -50% 0px',
+      threshold: 0
     };
 
-    // Initial check
-    handleScroll();
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
 
-  const handleNavClick = (section) => {
-    setActiveSection(section);
-  };
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 400);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      sections.forEach((section) => {
+        observer.unobserve(section);
+      });
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -49,12 +52,12 @@ function BottomNav() {
   return (
     <>
       <nav className="bottom-nav">
-        <a href="#home" onClick={() => handleNavClick('home')} className={activeSection === 'home' ? 'active' : ''}><i className="fas fa-house"></i><span className="nav-text"> Home</span></a>
-        <a href="#skills" onClick={() => handleNavClick('skills')} className={activeSection === 'skills' ? 'active' : ''}><i className="fas fa-laptop-code"></i><span className="nav-text"> Skills</span></a>
-        <a href="#projects" onClick={() => handleNavClick('projects')} className={activeSection === 'projects' ? 'active' : ''}><i className="fas fa-diagram-project"></i><span className="nav-text"> Projects</span></a>
-        <a href="#education" onClick={() => handleNavClick('education')} className={activeSection === 'education' ? 'active' : ''}><i className="fas fa-user-graduate"></i><span className="nav-text"> Education</span></a>
-        <a href="#achievements" onClick={() => handleNavClick('achievements')} className={activeSection === 'achievements' ? 'active' : ''}><i className="fas fa-award"></i><span className="nav-text"> Achievements</span></a>
-        <a href="#contact" onClick={() => handleNavClick('contact')} className={activeSection === 'contact' ? 'active' : ''}><i className="fas fa-paper-plane"></i><span className="nav-text"> Contact</span></a>
+        <a href="#home" className={activeSection === 'home' ? 'nav-active' : ''}><i className="fas fa-house"></i><span className="nav-text"> Home</span></a>
+        <a href="#skills" className={activeSection === 'skills' ? 'nav-active' : ''}><i className="fas fa-laptop-code"></i><span className="nav-text"> Skills</span></a>
+        <a href="#projects" className={activeSection === 'projects' ? 'nav-active' : ''}><i className="fas fa-diagram-project"></i><span className="nav-text"> Projects</span></a>
+        <a href="#education" className={activeSection === 'education' ? 'nav-active' : ''}><i className="fas fa-user-graduate"></i><span className="nav-text"> Education</span></a>
+        <a href="#achievements" className={activeSection === 'achievements' ? 'nav-active' : ''}><i className="fas fa-award"></i><span className="nav-text"> Achievements</span></a>
+        <a href="#contact" className={activeSection === 'contact' ? 'nav-active' : ''}><i className="fas fa-paper-plane"></i><span className="nav-text"> Contact</span></a>
       </nav>
       
       <button 
