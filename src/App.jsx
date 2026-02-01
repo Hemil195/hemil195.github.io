@@ -8,6 +8,7 @@ import SkillGroup from "./components/SkillGroup/SkillGroup";
 import EducationCard from "./components/EducationCard/EducationCard";
 import AchievementCard from "./components/AchievementCard/AchievementCard";
 import CertificationItem from "./components/CertificationItem/CertificationItem";
+import ThemeToggle from "./components/ThemeToggle/ThemeToggle";
 
 function App() {
   const [roleText, setRoleText] = useState("");
@@ -222,6 +223,7 @@ function App() {
 
   return (
     <div className="app-root">
+      <ThemeToggle />
       {/* Hero Section */}
       <section id="home" className="section section--home">
         <div className="hero-content">
@@ -384,7 +386,7 @@ function App() {
                 <h3>Email</h3>
                 <a href="mailto:hemilpatel0195@gmail.com">hemilpatel0195@gmail.com</a>
               </div>
-                            
+
               <div className="contact-info-card">
                 <div className="info-icon">
                   <i className="fab fa-linkedin-in"></i>

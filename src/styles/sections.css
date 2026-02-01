@@ -859,9 +859,20 @@
   transition: all 0.3s ease;
 }
 
+[data-theme="light"] .project-btn {
+  background: rgba(8, 145, 178, 0.05);
+  border: 1px solid rgba(15, 23, 42, 0.2);
+  color: var(--text);
+}
+
 .project-btn:hover {
   background: rgba(255, 255, 255, 0.08);
   border-color: var(--accent);
+}
+
+[data-theme="light"] .project-btn:hover {
+  background: rgba(8, 145, 178, 0.1);
+  border-color: var(--primary);
 }
 
 /* ============ ACHIEVEMENTS SECTION ============ */
@@ -1007,6 +1018,10 @@
   overflow: hidden;
 }
 
+[data-theme="light"] .section--contact {
+  background: linear-gradient(180deg, rgba(8, 145, 178, 0.05), #e2e8f0);
+}
+
 .section--contact::before {
   content: '';
   position: absolute;
@@ -1017,6 +1032,10 @@
   height: 800px;
   background: radial-gradient(circle, rgba(6, 182, 212, 0.05) 0%, transparent 70%);
   pointer-events: none;
+}
+
+[data-theme="light"] .section--contact::before {
+  background: radial-gradient(circle, rgba(8, 145, 178, 0.08) 0%, transparent 70%);
 }
 
 .contact-header {
@@ -1050,6 +1069,12 @@
   overflow: hidden;
 }
 
+[data-theme="light"] .contact-info-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
 .contact-info-card::before {
   content: '';
   position: absolute;
@@ -1068,6 +1093,11 @@
   box-shadow: 0 12px 40px rgba(6, 182, 212, 0.15);
 }
 
+[data-theme="light"] .contact-info-card:hover {
+  border-color: rgba(8, 145, 178, 0.3);
+  box-shadow: 0 12px 40px rgba(8, 145, 178, 0.2);
+}
+
 .contact-info-card:hover::before {
   opacity: 1;
 }
@@ -1084,6 +1114,10 @@
   font-size: 28px;
   color: var(--primary);
   position: relative;
+}
+
+[data-theme="light"] .info-icon {
+  background: linear-gradient(135deg, rgba(8, 145, 178, 0.15), rgba(124, 58, 237, 0.15));
 }
 
 .info-icon::after {
@@ -1136,6 +1170,12 @@
   overflow: hidden;
 }
 
+[data-theme="light"] .contact-cta-box {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(15, 23, 42, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
 .cta-glow {
   position: absolute;
   top: -50%;
@@ -1145,6 +1185,10 @@
   background: radial-gradient(circle, rgba(6, 182, 212, 0.1) 0%, transparent 50%);
   animation: rotate 20s linear infinite;
   pointer-events: none;
+}
+
+[data-theme="light"] .cta-glow {
+  background: radial-gradient(circle, rgba(8, 145, 178, 0.08) 0%, transparent 50%);
 }
 
 @keyframes rotate {

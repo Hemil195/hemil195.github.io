@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Poppins:wght@600;700;800&display=swap');
 
 :root {
-  /* Colors */
+  /* Colors - Dark Theme (default) */
   --bg: #0b1220;
   --surface: #0f1724;
   --text: #e6eef8;
@@ -11,6 +11,8 @@
   --accent-2: #a78bfa;
   --accent-3: #ec4899;
   --glass: rgba(255, 255, 255, 0.04);
+  --primary: #06b6d4;
+  --border: rgba(255, 255, 255, 0.06);
 
   /* Spacing */
   --space-xs: 6px;
@@ -43,6 +45,69 @@
   --tablet: 768px;
   --desktop: 1024px;
   --wide: 1440px;
+}
+
+/* Light Theme */
+[data-theme="light"] {
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --accent: #0891b2;
+  --accent-2: #7c3aed;
+  --accent-3: #db2777;
+  --glass: rgba(15, 23, 42, 0.04);
+  --primary: #0891b2;
+  --border: rgba(15, 23, 42, 0.1);
+}
+
+[data-theme="light"] body {
+  background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+[data-theme="light"] .section--home {
+  background: linear-gradient(180deg, #f8fafc, #e0f2fe);
+}
+
+[data-theme="light"] .hero-divider {
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+}
+
+[data-theme="light"] .btn-primary {
+  background: linear-gradient(135deg, #0891b2, #06b6d4);
+  box-shadow: 0 4px 16px rgba(8, 145, 178, 0.3);
+}
+
+[data-theme="light"] .btn-outline {
+  border-color: var(--border);
+  color: var(--text);
+}
+
+[data-theme="light"] .btn-outline:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+[data-theme="light"] .social-link {
+  background: rgba(15, 23, 42, 0.05);
+  border-color: var(--border);
+}
+
+[data-theme="light"] .social-link:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+[data-theme="light"] .contact-info-card,
+[data-theme="light"] .contact-cta-box {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: var(--border);
+}
+
+[data-theme="light"] .info-icon {
+  background: linear-gradient(135deg, rgba(8, 145, 178, 0.1), rgba(124, 58, 237, 0.1));
 }
 
 /* Global base setup */
