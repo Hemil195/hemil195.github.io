@@ -367,35 +367,47 @@ function App() {
       {/* Contact Section */}
       <section id="contact" className="section section--contact reveal">
         <div className="container">
-          <h2 className="section-title">Let's Connect</h2>
-          <p className="section-subtitle">
-            I'm always excited to discuss new opportunities, collaborate on projects, or just have a conversation about technology.
-          </p>
-          
-          <div className="contact-grid">
-            <a href="mailto:hemilpatel0195@gmail.com" className="contact-link">
-              <span className="contact-link-icon"><i className="fas fa-envelope"></i></span>
-              <span className="contact-link-label">Email</span>
-              <span className="contact-link-value">hemilpatel0195@gmail.com</span>
-            </a>
-            <a href="tel:+919876543210" className="contact-link">
-              <span className="contact-link-icon"><i className="fas fa-phone"></i></span>
-              <span className="contact-link-label">Phone</span>
-              <span className="contact-link-value">+91 98765 43210</span>
-            </a>
-            <a href="https://linkedin.com/in/hemil-patel-298a83288" target="_blank" rel="noopener noreferrer" className="contact-link">
-              <span className="contact-link-icon"><i className="fab fa-linkedin"></i></span>
-              <span className="contact-link-label">LinkedIn</span>
-              <span className="contact-link-value">Hemil Patel</span>
-            </a>
+          <div className="contact-header">
+            <h2 className="section-title">Get In Touch</h2>
+            <p className="section-subtitle">
+              Open to full-time opportunities, freelance projects, and collaborations. 
+              Let's discuss how we can work together.
+            </p>
           </div>
+          
+          <div className="contact-content">
+            <div className="contact-info-grid">
+              <div className="contact-info-card">
+                <div className="info-icon">
+                  <i className="fas fa-envelope"></i>
+                </div>
+                <h3>Email</h3>
+                <a href="mailto:hemilpatel0195@gmail.com">hemilpatel0195@gmail.com</a>
+              </div>
+                            
+              <div className="contact-info-card">
+                <div className="info-icon">
+                  <i className="fab fa-linkedin-in"></i>
+                </div>
+                <h3>LinkedIn</h3>
+                <a href="https://linkedin.com/in/hemil-patel-298a83288" target="_blank" rel="noopener noreferrer">Connect with me</a>
+              </div>
+            </div>
 
-          <div className="contact-cta">
-            <h3>Ready to Work Together?</h3>
-            <p>Whether you have a project in mind or want to discuss opportunities, I'd love to hear from you.</p>
-            <div className="contact-buttons">
-              <a href="mailto:hemilpatel0195@gmail.com" className="btn btn-primary"><i className="fas fa-envelope"></i> Send Email</a>
-              <a href="https://linkedin.com/in/hemil-patel-298a83288" target="_blank" rel="noopener noreferrer" className="btn btn-secondary"><i className="fab fa-linkedin"></i> Connect on LinkedIn</a>
+            <div className="contact-cta-box">
+              <div className="cta-glow"></div>
+              <h3>Available for New Projects</h3>
+              <p>I'm currently accepting new projects and opportunities. Whether you need a full-stack developer, want to discuss a potential collaboration, or just want to say hi, feel free to reach out.</p>
+              <div className="contact-actions">
+                <a href="mailto:hemilpatel0195@gmail.com" className="btn btn-primary">
+                  <i className="fas fa-envelope"></i>
+                  <span>Send Message</span>
+                </a>
+                <a href="/Hemil_Patel.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-outline">
+                  <i className="fas fa-file-alt"></i>
+                  <span>View Resume</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
