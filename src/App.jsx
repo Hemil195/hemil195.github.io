@@ -321,7 +321,7 @@ function App() {
             <a href="https://leetcode.com/hemilpatel0195" target="_blank" rel="noopener noreferrer" className="social-link" title="LeetCode">
               <img src="/leetcode.png" alt="LeetCode" className="social-icon-img" />
             </a>
-            <a href="https://codilio.com/profile/hemilpatel0195" target="_blank" rel="noopener noreferrer" className="social-link" title="Codilio">
+            <a href="https://codolio.com/profile/hemil195" target="_blank" rel="noopener noreferrer" className="social-link" title="Codilio">
               <img src="/codolio.svg" alt="Codilio" className="social-icon-svg" />
             </a>
           </div>
