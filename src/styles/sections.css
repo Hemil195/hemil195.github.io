@@ -1073,32 +1073,94 @@
   transform: translateX(4px);
 }
 
+.cert-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
 .cert-item h4 {
   font-family: var(--font-heading);
   font-size: 17px;
   color: var(--text);
-  margin: 0 0 8px 0;
-  display: flex;
+  margin: 0;
+}
+
+.cert-top-link {
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
-}
-
-.cert-link {
-  color: var(--primary);
-  font-size: 14px;
+  justify-content: center;
+  background: rgba(255, 122, 89, 0.12);
+  border: 1px solid rgba(255, 122, 89, 0.28);
+  color: var(--accent-2);
+  text-decoration: none;
+  flex-shrink: 0;
   transition: all 0.3s ease;
-  opacity: 0.7;
 }
 
-.cert-link:hover {
-  opacity: 1;
+.cert-top-link:hover {
+  background: rgba(255, 122, 89, 0.18);
   transform: translateY(-2px);
 }
 
-.cert-item p {
+.cert-preview-wrap {
+  display: block;
+  margin: 10px 0 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.02);
+  transition: all 0.25s ease;
+}
+
+.cert-preview-wrap:hover {
+  border-color: rgba(6, 182, 212, 0.35);
+}
+
+.cert-preview-image,
+.cert-preview-fallback {
+  width: 100%;
+  height: 140px;
+}
+
+.cert-preview-image {
+  display: block;
+  object-fit: cover;
+  object-position: center center;
+  background: #ffffff;
+}
+
+.cert-preview-pdf-shell {
+  width: 100%;
+  height: 140px;
+  overflow: hidden;
+  position: relative;
+  background: #ffffff;
+}
+
+.cert-preview-pdf {
+  border: 0;
+  display: block;
+  width: 125%;
+  height: 125%;
+  margin-left: -12.5%;
+  margin-top: -8%;
+  pointer-events: none;
+  background: #ffffff;
+}
+
+.cert-preview-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   color: var(--muted);
-  font-size: 14px;
-  margin: 0;
+  font-size: 13px;
 }
 
 /* ============ CONTACT SECTION ============ */

@@ -197,29 +197,94 @@ function App() {
     }
   ];
 
-  // Certifications data
-  const certifications = [
-    {
-      title: "Design and Analysis of Algorithms - NPTEL",
-      description: "Completed comprehensive course on algorithm design and analysis",
-      certificateLink: "#"
-    },
-    {
-      title: "Data Structures and Algorithms using Java - NPTEL",
-      description: "Advanced DSA certification focusing on Java implementation",
-      certificateLink: "#"
-    },
-    {
-      title: "Database Management Systems (DBMS) - NPTEL",
-      description: "Comprehensive study of database concepts and management",
-      certificateLink: "#"
-    },
-    {
-      title: "Getting Started with AI on Jetson Nano - NVIDIA",
-      description: "Introduction to AI and machine learning on edge devices",
-      certificateLink: "#"
-    }
+  const certificationFiles = [
+    "Data Structure and Algorithms using Java.pdf",
+    "Design and analysis of algorithms.pdf",
+    "IBM DevOps.pdf",
+    "Adv_Frontend_Development_with_react.pdf",
+    "Backend_Development_and_Api_Creation.pdf",
+    "Courseara_Mern_Stack.pdf",
+    "Courseara_ML.pdf",
+    "C-Sharp Microsoft Course.pdf",
+    "Encryption and Cryptography Essentials.pdf",
+    "Getting Started With AI on Jetson Nano.png",
+    "IEEE Certificate.pdf",
+    "Internship Certificate.pdf",
+    "Introduction to Web Designing.pdf",
+    "Jetson nano.pdf",
+    "23cs064_PyQuest.png"
   ];
+
+  const certificateTitleOverrides = {
+    "23cs064_PyQuest.png": "PyQuest Certificate",
+    "C-Sharp Microsoft Course.pdf": "C# Microsoft Course",
+    "Courseara_Mern_Stack.pdf": "Coursera MERN Stack",
+    "Courseara_ML.pdf": "Coursera Machine Learning"
+  };
+
+  const toTitleCase = (value) => {
+    const acronyms = new Set(["AI", "API", "AWS", "C#", "DBMS", "DSA", "IBM", "IEEE", "MERN", "ML", "NPTEL", "OS"]);
+
+    return value
+      .split(" ")
+      .map((word) => {
+        if (!word) {
+          return word;
+        }
+
+        const upperWord = word.toUpperCase();
+        if (acronyms.has(upperWord)) {
+          return upperWord;
+        }
+
+        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+      })
+      .join(" ");
+  };
+
+  const formatCertificationTitle = (fileName) => {
+    if (certificateTitleOverrides[fileName]) {
+      return certificateTitleOverrides[fileName];
+    }
+
+    const withoutExtension = fileName.replace(/\.[^/.]+$/, "");
+
+    const cleanedTitle = withoutExtension
+      .replace(/\(\d+\)/g, " ")
+      .replace(/^23cs064\b/i, " ")
+      .replace(/\bhemil\b/gi, " ")
+      .replace(/\bpatel\b/gi, " ")
+      .replace(/\bcourseara\b/gi, "Coursera")
+      .replace(/\badv\b/gi, "Advanced")
+      .replace(/\bapi\b/gi, "API")
+      .replace(/\bdevops\b/gi, "DevOps")
+      .replace(/\bjetson nano\b/gi, "Jetson Nano")
+      .replace(/\broadmap\b/gi, "Roadmap")
+      .replace(/\btechathon\b/gi, "Techathon")
+      .replace(/\bmern\b/gi, "MERN")
+      .replace(/\bml\b/gi, "ML")
+      .replace(/[_-]+/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+
+    if (!cleanedTitle) {
+      return "Certificate";
+    }
+
+    return toTitleCase(cleanedTitle);
+  };
+
+  // Certifications data from public/Certificate
+  const certifications = certificationFiles.map((fileName) => {
+    const fileUrl = `/Certificate/${encodeURIComponent(fileName)}`;
+    const title = formatCertificationTitle(fileName);
+
+    return {
+      title,
+      previewLink: fileUrl,
+      certificateLink: fileUrl
+    };
+  });
 
   return (
     <div className="app-root">
@@ -356,7 +421,7 @@ function App() {
                   <CertificationItem
                     key={index}
                     title={cert.title}
-                    description={cert.description}
+                    previewLink={cert.previewLink}
                     certificateLink={cert.certificateLink}
                   />
                 ))}
