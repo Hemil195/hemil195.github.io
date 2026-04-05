@@ -49,15 +49,26 @@ function BottomNav() {
     });
   };
 
+  const handleNavClick = (event, targetId) => {
+    event.preventDefault();
+    const section = document.getElementById(targetId);
+
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setActiveSection(targetId);
+      window.history.replaceState(null, '', `#${targetId}`);
+    }
+  };
+
   return (
     <>
       <nav className="bottom-nav">
-        <a href="#home" className={activeSection === 'home' ? 'nav-active' : ''}><i className="fas fa-house"></i><span className="nav-text"> Home</span></a>
-        <a href="#skills" className={activeSection === 'skills' ? 'nav-active' : ''}><i className="fas fa-laptop-code"></i><span className="nav-text"> Skills</span></a>
-        <a href="#projects" className={activeSection === 'projects' ? 'nav-active' : ''}><i className="fas fa-diagram-project"></i><span className="nav-text"> Projects</span></a>
-        <a href="#education" className={activeSection === 'education' ? 'nav-active' : ''}><i className="fas fa-user-graduate"></i><span className="nav-text"> Education</span></a>
-        <a href="#achievements" className={activeSection === 'achievements' ? 'nav-active' : ''}><i className="fas fa-award"></i><span className="nav-text"> Achievements</span></a>
-        <a href="#contact" className={activeSection === 'contact' ? 'nav-active' : ''}><i className="fas fa-paper-plane"></i><span className="nav-text"> Contact</span></a>
+        <a href="#home" onClick={(event) => handleNavClick(event, 'home')} className={activeSection === 'home' ? 'nav-active' : ''}><i className="fas fa-house"></i><span className="nav-text"> Home</span></a>
+        <a href="#skills" onClick={(event) => handleNavClick(event, 'skills')} className={activeSection === 'skills' ? 'nav-active' : ''}><i className="fas fa-laptop-code"></i><span className="nav-text"> Skills</span></a>
+        <a href="#projects" onClick={(event) => handleNavClick(event, 'projects')} className={activeSection === 'projects' ? 'nav-active' : ''}><i className="fas fa-diagram-project"></i><span className="nav-text"> Projects</span></a>
+        <a href="#education" onClick={(event) => handleNavClick(event, 'education')} className={activeSection === 'education' ? 'nav-active' : ''}><i className="fas fa-user-graduate"></i><span className="nav-text"> Education</span></a>
+        <a href="#achievements" onClick={(event) => handleNavClick(event, 'achievements')} className={activeSection === 'achievements' ? 'nav-active' : ''}><i className="fas fa-award"></i><span className="nav-text"> Achievements</span></a>
+        <a href="#contact" onClick={(event) => handleNavClick(event, 'contact')} className={activeSection === 'contact' ? 'nav-active' : ''}><i className="fas fa-paper-plane"></i><span className="nav-text"> Contact</span></a>
       </nav>
       
       <button 
